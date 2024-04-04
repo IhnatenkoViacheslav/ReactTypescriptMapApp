@@ -1,0 +1,43 @@
+.block_search {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.search_form {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search_title {
+    padding-right: 40px;
+    color: #50005a;
+    font-size: 25px;
+}
+
+.icon_search {
+    background-color: transparent;
+    border: none;
+    position: relative;
+    left: -20%;
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+.icon_search:hover {
+    background-color: transparent;
+    transform: scale(1.1);
+}
+
+i {
+    position: absolute;
+    color: #50005a;
+    top: 13%;
+    left: 12%;
+}
+
+
+
+
+

@@ -1,24 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+import NewTodo from './components/Todo/NewTodo';
+import TodoList from './components/Todo/TodoList';
+import Map from './components/Map/Map';
+import AddPlaces from './components/AddPlaces/AddPlaces';
+import { Todo } from './todo.model';
+
+import './App.css';
+import SearchAdress from './components/Map/SearchAdress';
+
+const App: React.FC = () => {
+  const [todos, setTodos] = useState<Todo[]>([])
+
+  const todoAddHandler = (text: string) => {
+    setTodos(prevTodos => [...prevTodos, {id: Math.random().toString(), text: text}])
+  };
+
+  const todoDeleteHandler = (todoId: string) => {
+    setTodos(prevTodos => {
+      return prevTodos.filter(todo => todo.id !== todoId)
+    })
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <div className='flex_container'>
+          <div className='map_block'>
+            <SearchAdress/>
+            <Map/>
+          </div>
+          <div className='container_right'>
+            <div className='todo_block'>
+              <NewTodo onAddTodo={todoAddHandler}/>
+              <TodoList 
+                todos={todos} 
+                onDeleteTodo={todoDeleteHandler}
+              />
+            </div>
+            <div className='addplace_block'>
+                <AddPlaces/>
+            </div>
+          </div>
+      </div>
     </div>
   );
 }

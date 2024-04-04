@@ -1,0 +1,40 @@
+.todo-search {
+  display: flex;
+}
+
+.list_table {
+  list-style: none;
+  max-width: 40rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  row-gap: 10px;
+}
+
+.table_item {
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 6px;
+  display: flex;
+  gap: 4rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon_delete {
+  background-color: transparent;
+  border: none;
+  position: relative;
+  padding: 1rem;
+  border-radius: 50%;
+  color: #50005a;
+}
+
+.icon_delete:hover {
+  background-color: transparent;
+  transform: scale(1.1);
+}
+
+
+

@@ -1,0 +1,30 @@
+.todo_search {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.search_control {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.icon_add {
+  background-color: transparent;
+  border: none;
+  position: relative;
+  left: -20%;
+  top: 12px;
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+.icon_add:hover {
+  background-color: transparent;
+  transform: scale(1.1);
+}
+
+
+
